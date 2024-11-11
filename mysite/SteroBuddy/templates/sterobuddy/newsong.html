@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    {% load static %}
+
+</head>
+
+<body>
+
+    {% include 'SteroBuddy/nav.html' %}
+    <div class="columns"></div>
+    <div class="column is-6 is-offset-3">
+    <section class="section">
+        <div class="box">
+            <h3 class="title is-3"> how to find new songs</h3>
+
+            <li>search your favrot songs below(3 song min)</li>
+            <li> click submit</li>
+            <li>wach your new favrot songs appiar </li>
+            <li>once all five songs click done</li>
+
+        </div>
+
+        </div>
+    </section>
+
+
+
+    <div class="column is-4 is-offset-4">
+        <div class="box">
+
+            <form action="{% url 'SteroBuddy:findsong' %}" method="get">
+                <div class="field has-addons">
+                    <div class="control">
+                        <input class="input is-primary is-rounded" type="search" placeholder="Song name" name="songnm">
+                    </div>
+                    <div class="control">
+                        <input class="button is-primary" type="submit" value="submit">
+                    </div>
+
+                </div>
+            </form>
+
+
+            {% for f in fav_songs %}
+            <h5 class="title is-5">{{ f }} </h5>
+
+
+            {% endfor %}
+
+            <a class="button is-info" href="{% url 'SteroBuddy:findingsong' %}">Done?</a>
+        </div>
+
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>

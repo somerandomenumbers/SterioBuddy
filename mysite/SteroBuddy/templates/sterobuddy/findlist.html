@@ -1,0 +1,172 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    {% load static %}
+
+</head>
+
+<body>
+
+
+    {% include 'SteroBuddy/nav.html' %}
+
+   <h1 class="title is-1"> these are all the lists from common users</h1>
+   
+
+
+
+    <div class="columns">
+
+        <div class="column">
+            {% for l in list1 %}
+        
+            <div class="card">
+                <div class="card-content">
+            
+                    <p class="title">
+                        {{ l }}
+                    </p>
+                    <p class="subtitle">
+                        {{ l.auther}}
+            
+                    </p>
+            
+                    <div class="content">
+            
+                        {% for s in l.songs.all %}
+                        <p> {{ s }}</p>
+                        {% endfor %}
+            
+            
+            
+                    </div>
+            
+                    <footer class="card-footer">
+            
+                        {% if request.user == l.auther%}
+                        <a href="{% url 'SteroBuddy:trash' l.id %}">Trash</a>
+                        {% endif %}
+                    </footer>
+            
+            
+                </div>
+            
+            </div>
+            {% endfor %}
+
+        </div>
+       
+        
+        <div class="column">
+            {% for l in list2 %}
+            <div class="card">
+                <div class="card-content">
+            
+                    <p class="title">
+                        {{ l }}
+                    </p>
+                    <p class="subtitle">
+                        {{ l.auther}}
+            
+                    </p>
+            
+                    <div class="content">
+            
+                        {% for s in l.songs.all %}
+                        <p> {{ s }}</p>
+                        {% endfor %}
+            
+            
+            
+                    </div>
+            
+                    <footer class="card-footer">
+            
+                        {% if request.user == l.auther%}
+                        <a href="{% url 'SteroBuddy:trash' l.id %}">Trash</a>
+                        {% endif %}
+                    </footer>
+            
+            
+                </div>
+            
+            </div>
+            {% endfor %}
+        </div>  
+       
+
+       
+    
+        
+        <div class="column">
+            {% for l in list3 %}
+            <div class="card">
+                <div class="card-content">
+            
+                    <p class="title">
+                        {{ l }}
+                    </p>
+                    <p class="subtitle">
+                        {{ l.auther}}
+            
+                    </p>
+            
+                    <div class="content">
+            
+                        {% for s in l.songs.all %}
+                        <p> {{ s }}</p>
+                        {% endfor %}
+            
+            
+            
+                    </div>
+            
+                    <footer class="card-footer">
+            
+                        {% if request.user == l.auther%}
+                        <a href="{% url 'SteroBuddy:trash' l.id %}">Trash</a>
+                        {% endif %}
+                    </footer>
+            
+            
+                </div>
+            
+            </div>
+            {% endfor %}
+        </div>
+        
+    
+       
+    
+    
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
+

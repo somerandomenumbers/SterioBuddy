@@ -1,0 +1,78 @@
+
+
+<nav class="navbar is-primary">
+    <div class="navbar-brand">
+
+      <a href="" class="navbar-item">
+        {% load static %}
+        <style>
+          .I{
+            min-height: 59px;
+            min-width: 100px;
+          }
+        </style>
+       
+
+        <img class="I" src="{%  static 'sterobuddy/images/sb.png' %}" alt="SB">
+
+
+      </a>
+
+
+
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="{% url 'SteroBuddy:home' %}">
+          Home
+        </a>
+
+        <a href="{% url 'SteroBuddy:findlist' %}" class="navbar-item">
+          Find mixes
+        </a>
+
+        <a href="{% url 'SteroBuddy:mixes' %}" class="navbar-item">
+          Create mixes
+        </a>
+      
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              {{request.user.username}}
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a href="{% url 'SteroBuddy:logout' %}" class="navbar-item">
+                Logout
+              </a>
+
+              
+              </div>
+
+
+        </div>
+
+        </div> 
+
+
+       
+    </div>
+
+
+
+
+
+
+  </nav>

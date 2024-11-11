@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    {% load static %}
+
+</head>
+<body>
+
+    {% include 'SteroBuddy/nav.html' %}
+
+
+  <h1 class=" title is-3"> We think you would like:</h1> 
+
+    {% for f in new_song %}
+    <p class="button is-success">{{ f }} </p>
+
+
+    {% endfor %}
+
+    
+</body>
+</html>

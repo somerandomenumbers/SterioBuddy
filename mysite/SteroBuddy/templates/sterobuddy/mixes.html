@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    {% load static %}
+
+</head>
+
+<body>
+
+    {% include 'SteroBuddy/nav.html' %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="columns">
+        <div class="column is-4 is-offset-4">
+            <div class="box">
+
+                <h1 class="title is-1"> Create a mix </h1>
+                <h5 class="title is-5"> chosse the genre</h5>
+
+
+                <form action="{% url 'SteroBuddy:postmix'%}" method="get">
+                    <p>
+                        <input type="checkbox" id="Chill">
+                        <label for="Chill">Chill</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Sleep">
+                        <label for="Sleep">Sleep</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Hype">
+                        <label for="Hype">Hype</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Remix">
+                        <label for="Remix">Remix</label>
+                    </p>
+
+                    <input type="text" name="name" id="name" class="input" placeholder="name">
+                    <input type="submit" value="create mix" class="button is-link">
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

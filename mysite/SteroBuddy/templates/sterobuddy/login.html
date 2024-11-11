@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
+</head>
+
+<body>
+
+
+
+
+    <section class="section">
+        <div class="column is-half is-offset-one-quarter">
+            <h1 class="title is-1">Login</h1>
+            <form class="box" action="{% url 'SteroBuddy:athentic' %}" method="post">
+                {% csrf_token %}
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control">
+                        <input class="input" name="username" type="text">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input class="input" name="password" type="password">
+
+                    </div>
+                </div>
+                <input class="button is-primary" type="submit" value="log in">
+            </form>
+            <a  href="{% url 'SteroBuddy:signup' %}">click to signup</a>
+        </div>
+
+
+    </section>
+
+
+
+</body>
+
+</html>
