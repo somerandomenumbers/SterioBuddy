@@ -25,7 +25,7 @@ def home(request):
         song2 = song0[1]
         song3 = song0[2]
     except:
-        song1 = "currently no songs in databass"
+        song1 = "currently no songs in databass(sorry)"
         song2 = "currently no songs in databass"
         song3 = "currently no songs in databass"
 
