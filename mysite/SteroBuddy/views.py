@@ -19,9 +19,16 @@ import random
 
 @login_required(login_url="/SteroBuddy/login")
 def home(request):
-    song1 = random.choice(Song.objects.all())
-    song2 = random.choice(Song.objects.all())
-    song3 = random.choice(Song.objects.all())
+    try:
+        song0 = random.sample(Song.objects.all(),3)
+        song1 = song0[0] 
+        song2 = song0[1]
+        song3 = song0[2]
+    except:
+        song1 = "currently no songs in databass"
+        song2 = "currently no songs in databass"
+        song3 = "currently no songs in databass"
+
 
     return render(request, "sterobuddy/home.html", {'song1':song1, 'song2':song2, 'song3':song3}  )
 
