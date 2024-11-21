@@ -20,17 +20,12 @@ import random
 @login_required(login_url="/SteroBuddy/login")
 def home(request):
     try:
-        song0 = random.sample(Song.objects.all(),3)
-        song1 = song0[0] 
-        song2 = song0[1]
-        song3 = song0[2]
+        songs = random.sample(list(Song.objects.all()), 3)
+        print(songs)
     except:
-        song1 = "currently no songs in databass(sorry)"
-        song2 = "currently no songs in databass"
-        song3 = "currently no songs in databass"
+        songs = []
 
-
-    return render(request, "sterobuddy/home.html", {'song1':song1, 'song2':song2, 'song3':song3}  )
+    return render(request, "sterobuddy/home.html", {'songs':songs})
 
 def loginpage(request):
     return render(request, "sterobuddy/login.html" )
@@ -81,7 +76,7 @@ def findsong(request):
         MBsong = []
         for track in tracks:
             print(track['name'], track['artist'])
-            Msong = ({track['name']}, {track['artist']})
+            Msong = (f"{track['name']}", f"{track['artist']}")
             MBsong.append(Msong)
 
 
@@ -94,6 +89,8 @@ def findsong(request):
 
 @login_required(login_url="/SteroBuddy/login")
 def addingsong(request, track, artist):
+   
+    print(track)
     Lsong = Song(song_name=track)
     Lsong.save()
     return redirect(f'/SteroBuddy/findsong?songnm={track}')

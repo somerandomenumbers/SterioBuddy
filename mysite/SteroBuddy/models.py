@@ -12,6 +12,9 @@ class Song(models.Model):
     def __str__(self) :
         return self.song_name
 
+    def __repr__(self):
+        return self.song_name
+
 
 class User_prof(models.Model):
     common_users = models.ManyToManyField(User)
