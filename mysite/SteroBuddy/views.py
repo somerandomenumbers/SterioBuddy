@@ -89,11 +89,17 @@ def findsong(request):
 
 @login_required(login_url="/SteroBuddy/login")
 def addingsong(request, track, artist):
-   
-    print(track)
-    Lsong = Song(song_name=track)
-    Lsong.save()
-    return redirect(f'/SteroBuddy/findsong?songnm={track}')
+    print(Song.objects.all()) 
+    
+    try:
+        song = Song.objects.get(song_name=track)
+        user = request.user
+        song.fans.add(user)
+        return redirect(f'/SteroBuddy/findsong?songnm={song}')
+    except:
+        Lsong = Song(song_name=track)
+        Lsong.save()
+        return redirect(f'/SteroBuddy/findsong?songnm={track}')
             
        
         
