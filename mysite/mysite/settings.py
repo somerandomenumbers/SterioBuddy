@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-h4)bxna&^%y@o&ld#l&3595(8pqg!97^@9cu(rsk6!3imt))&q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'stereobuddy.pythonanywhere.com']
 
 
 # Application definition
@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls.apps.PollsConfig',
-    'quacker.apps.QuackerConfig',
+    # 'polls.apps.PollsConfig',
+    # 'quacker.apps.QuackerConfig',
     'SteroBuddy.apps.SterobuddyConfig'
     
 ]

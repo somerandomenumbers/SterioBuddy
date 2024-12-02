@@ -19,8 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('polls/', include('polls.urls')),
-    path('quack/', include('quacker.urls')),
+    # path('quack/', include('quacker.urls')),
+    # path('polls/', include('polls.urls')),
     path('SteroBuddy/', include('SteroBuddy.urls'))
 
 ]
